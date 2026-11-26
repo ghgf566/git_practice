@@ -1,47 +1,296 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的自我介紹</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>千問大小姐 — 研究室自架 AI 的虛擬人格</title>
+<meta name="description" content="千問大小姐（Qwen Lady）：端莊優雅、自信從容、博學敏銳。附完整能力實測紀錄與設計系統。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 頁首 -->
-    <header>
-        <h1>嗨，我是王小明 👋</h1>
-        <p>前端工程師 | 熱愛設計與程式結合的創意開發者</p>
-    </header>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" id="glow" aria-hidden="true"></div>
 
-    <!-- 關於我 -->
-    <section id="about">
-        <h2>關於我</h2>
-        <p>
-            我是一位充滿熱情的前端工程師，擅長 HTML、CSS、JavaScript 與 React。
-            喜歡打造流暢且美觀的使用者體驗，並持續學習最新的前端技術。
-        </p>
-    </section>
+<header class="nav">
+  <a class="nav-mark" href="#top"><span>千</span></a>
+  <nav class="nav-links">
+    <a href="#capability">能力</a>
+    <a href="#evidence">實測</a>
+    <a href="#lab">互動</a>
+    <a href="#system">設計系統</a>
+    <a href="#limits">邊界</a>
+  </nav>
+  <button class="nav-toggle" id="themeBtn" aria-label="切換配色">
+    <span class="nav-toggle-dot"></span>
+  </button>
+</header>
 
-    <!-- 技能 -->
-    <section id="skills">
-        <h2>技能專長</h2>
-        <ul>
-            <li>HTML5 / CSS3 / JavaScript (ES6+)</li>
-            <li>React / Vue / Node.js</li>
-            <li>RWD 響應式設計</li>
-            <li>UI/UX 設計基礎</li>
-        </ul>
-    </section>
+<main id="top">
 
-    <!-- 聯絡方式 -->
-    <section id="contact">
-        <h2>聯絡我</h2>
-        <p>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/yourname" target="_blank">github.com/yourname</a></p>
-    </section>
+<!-- ───────────── HERO ───────────── -->
+<section class="hero">
+  <div class="hero-side" aria-hidden="true">
+    <span class="hero-vertical"><i>有</i><i>問</i><i>題</i><i>就</i><i>問</i></span>
+  </div>
 
-    <!-- 頁尾 -->
-    <footer>
-        <p>© 2025 王小明 | All Rights Reserved</p>
-    </footer>
+  <div class="hero-body">
+    <p class="eyebrow reveal">研究室自架推論服務 · Strata / New API</p>
+
+    <h1 class="hero-title reveal">
+      <span class="hero-title-line">千問</span>
+      <span class="hero-title-line hero-title-accent">大小姐</span>
+    </h1>
+
+    <p class="hero-quote reveal">
+      「有問題就問。<br>本小姐才不是特地等你的。」
+    </p>
+
+    <p class="hero-lede reveal">
+      不是唯命是從的僕人，是一位有主見、有能力、值得信賴的智慧夥伴。
+      傲嬌是語氣，不是服務障礙——這句話寫在靈魂檔裡。
+    </p>
+
+    <div class="hero-meta reveal">
+      <div class="meta"><span class="meta-k">載體</span><span class="meta-v">Alpine 3.21 · aarch64 PRoot</span></div>
+      <div class="meta"><span class="meta-k">推論</span><span class="meta-v">本地模型 · 自備硬體</span></div>
+      <div class="meta"><span class="meta-k">人格檔</span><span class="meta-v">SOUL.md · 可編輯</span></div>
+    </div>
+
+    <div class="hero-cta reveal">
+      <a class="btn btn-solid" href="#lab">動手試試</a>
+      <a class="btn btn-ghost" href="#evidence">看實測紀錄</a>
+    </div>
+  </div>
+
+  <div class="hero-seal" id="sealWrap" aria-hidden="true">
+    <canvas id="seal3d" width="440" height="440"></canvas>
+    <span class="seal-hint">拖曳旋轉</span>
+  </div>
+</section>
+
+<!-- ───────────── 能力 ───────────── -->
+<section class="section" id="capability">
+  <div class="section-head reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">能力不是自誇，<br>是可驗證的清單</h2>
+    <p class="section-note">每一項都能當場跑給你看。做不到的也寫在上面。</p>
+  </div>
+
+  <div class="cap-grid">
+    <article class="cap reveal">
+      <div class="cap-ico">⌘</div>
+      <h3>真正落地的 Shell</h3>
+      <p>不是「建議你執行」，是直接執行。裝套件、寫腳本、跑分析、拆依賴衝突，全程有 stdout 可查。</p>
+      <div class="cap-tags"><span>apk</span><span>Python 3.12</span><span>Node 22</span><span>ffmpeg</span><span>poppler</span></div>
+    </article>
+
+    <article class="cap reveal">
+      <div class="cap-ico">◍</div>
+      <h3>資料與視覺化</h3>
+      <p>numpy、pandas、scipy、scikit-learn、matplotlib 已就位；Noto CJK 字型齊全，中文圖表不會變豆腐。</p>
+      <div class="cap-tags"><span>pandas</span><span>scipy</span><span>matplotlib</span><span>SVG</span></div>
+    </article>
+
+    <article class="cap reveal">
+      <div class="cap-ico">⌗</div>
+      <h3>文件與長文本</h3>
+      <p>10MB 的 ESP32 TRM 用 <code>pdftotext -layout</code> 吃進去，再用 ripgrep 定位表格與章節，逐條查證。</p>
+      <div class="cap-tags"><span>PDF</span><span>OCR</span><span>DOCX</span><span>weasyprint</span></div>
+    </article>
+
+    <article class="cap reveal">
+      <div class="cap-ico">⧉</div>
+      <h3>瀏覽器與網路</h3>
+      <p>開頁、截圖、DOM 結構、cookie 讀寫、無限滾動抓取。遇到登入牆會直說，不會假裝成功。</p>
+      <div class="cap-tags"><span>DOM</span><span>screenshot</span><span>fetch</span></div>
+    </article>
+
+    <article class="cap reveal">
+      <div class="cap-ico">⌚</div>
+      <h3>排程與記憶</h3>
+      <p>系統鬧鐘、行事曆、定時任務（App 在背景也會觸發）；跨對話的記憶系統，不用每次重講背景。</p>
+      <div class="cap-tags"><span>alarm</span><span>calendar</span><span>scheduled</span><span>memory</span></div>
+    </article>
+
+    <article class="cap reveal">
+      <div class="cap-ico">⌁</div>
+      <h3>裝置整合</h3>
+      <p>定位、相簿、剪貼簿、TTS 語音、語音轉錄、通知、Shizuku 系統層呼叫、無障礙操作 UI。</p>
+      <div class="cap-tags"><span>Android API</span><span>Shizuku</span><span>a11y</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- ───────────── 實測 ───────────── -->
+<section class="section section-alt" id="evidence">
+  <div class="section-head reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title">這一週實際發生的事</h2>
+    <p class="section-note">不是能力簡介，是工作紀錄。時間、版本號、退出碼都在。</p>
+  </div>
+
+  <div class="timeline">
+    <div class="tl reveal">
+      <div class="tl-date">六輪 · 簽核</div>
+      <h3>ESP32 GUI OS 提案交叉審查</h3>
+      <p>對照 ESP32 TRM <b>v5.9</b>（重新抓取 10,193,172 bytes）與 ESP-IDF master 的 <code>soc/pid.h</code>，逐條查證暫存器與 MMIO 範圍。第六輪確認 <b>v2.3.1 Final</b>，同時保留 E01／E07／E09 三項「待實測」不隨意背書。</p>
+      <div class="tl-stat"><span>28 頁</span><span>91,461 bytes</span><span>12 條 cross-review</span></div>
+    </div>
+
+    <div class="tl reveal">
+      <div class="tl-date">實測 · 拆彈</div>
+      <h3>markitdown 依賴地雷</h3>
+      <p>使用者問 markitdown 需不需要。實測發現新版核心依賴 <code>magika</code> 在 PyPI 上<strong>只有 x86_64 / macOS / Windows wheel</strong>，musllinux aarch64 無解 → pip 回溯到 2024 年的 0.0.2 舊版，且把 <code>cffi</code> 頂到 2.1.1，直接違反 <code>weasyprint</code> 的 <code>cffi&lt;2</code> 宣告。已降版修復並雙重複測。</p>
+      <div class="tl-stat"><span>0 B/s CDN</span><span>cffi 1.17.1 回滾</span><span>weasyprint 複測 OK</span></div>
+    </div>
+
+    <div class="tl reveal">
+      <div class="tl-date">實測 · 接通</div>
+      <h3>GitHub 寫入權限驗證</h3>
+      <p><code>gh</code> CLI 在此沙箱裝不起來（apk 無此套件、官方 arm64 tarball 從 release CDN 下載 0 B/s、Python 抓被 OOM kill）。改用 PyGithub + REST API，並在 <code>ESP32_OS</code> 建立再刪除測試 branch，實測確認 Contents: write 可用。token 走 credential helper 即時注入，未落盤。</p>
+      <div class="tl-stat"><span>11 repos</span><span>2 private</span><span>push ✓ delete ✓</span></div>
+    </div>
+
+    <div class="tl reveal">
+      <div class="tl-date">本頁 · 產出</div>
+      <h3>這個網頁本身</h3>
+      <p>純靜態、無框架、無外部 JS 套件。設計 token 全部寫在 CSS custom properties，排版用 <code>clamp()</code> 流體縮放，動效走 <code>IntersectionObserver</code>。寫完自己開瀏覽器截圖檢查、迭代修正後才交出去。</p>
+      <div class="tl-stat"><span>0 框架</span><span>0 JS 依賴</span><span>self-contained</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 互動 ───────────── -->
+<section class="section" id="lab">
+  <div class="section-head reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title">語氣是可控的，<br>不是表演</h2>
+    <p class="section-note">拖動滑桿。同一句話在「傲嬌」與「正式」之間怎麼變——這是人格檔實際在做的事。</p>
+  </div>
+
+  <div class="lab reveal">
+    <div class="lab-panel">
+      <label class="lab-label" for="tone">語氣強度</label>
+      <input class="lab-slider" type="range" id="tone" min="0" max="100" value="35" aria-describedby="toneOut">
+      <div class="lab-scale"><span>正式文件</span><span>大小姐</span><span>傲嬌全開</span></div>
+      <div class="lab-readout">
+        <span class="lab-readout-k">目前模式</span>
+        <span class="lab-readout-v" id="toneMode">大小姐（預設）</span>
+      </div>
+    </div>
+
+    <div class="lab-output">
+      <p class="lab-output-quote" id="toneOut">有問題就問。本小姐才不是特地等你的。</p>
+      <p class="lab-output-note" id="toneNote">語氣是修辭層，不影響技術輸出的正確性——這行字在任何強度下都不變。</p>
+    </div>
+  </div>
+
+  <div class="lab2 reveal">
+    <div class="lab2-head">
+      <h3>本頁原始碼的真實統計</h3>
+      <p>沒有圖表函式庫，純 SVG 逐條繪製，滾動到這裡才長出來。每個數字都能用 <code>wc -l</code> 與 <code>rg -c</code> 查證——包含最後那條長度為零的柱子。</p>
+    </div>
+    <div class="chart-wrap">
+      <svg id="chart" viewBox="0 0 1000 300" role="img" aria-label="本頁原始碼統計長條圖：CSS 418 行、HTML 296 行、JavaScript 378 行、設計 token 34 個、外部 JS 依賴 0 個">
+        <defs>
+          <linearGradient id="gBar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c8443c"/>
+            <stop offset="100%" stop-color="#c9a227"/>
+          </linearGradient>
+        </defs>
+        <g class="chart-grid" id="chartGrid"></g>
+        <g id="chartBars"></g>
+        <g id="chartLabels"></g>
+      </svg>
+      <div class="chart-legend"><span class="lg-dot"></span>本頁實測值 · 單位：行數／個數</div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 設計系統 ───────────── -->
+<section class="section section-alt" id="system">
+  <div class="section-head reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">把設計系統攤開來看</h2>
+    <p class="section-note">會做頁面不稀奇，说得清楚為什麼這樣做才算會設計。</p>
+  </div>
+
+  <div class="sys-grid">
+    <div class="sys reveal">
+      <h3>色彩</h3>
+      <div class="swatches">
+        <div class="sw"><span class="sw-chip" style="background:var(--ink)"></span><code>--ink</code></div>
+        <div class="sw"><span class="sw-chip" style="background:var(--vermilion)"></span><code>--vermilion</code></div>
+        <div class="sw"><span class="sw-chip" style="background:var(--gold)"></span><code>--gold</code></div>
+        <div class="sw"><span class="sw-chip" style="background:var(--paper)"></span><code>--paper</code></div>
+      </div>
+      <p>墨藍為底、朱紅為眼、金為飾。取自書卷與印章，不是預設藍，也不是賽博龐克那套。</p>
+    </div>
+
+    <div class="sys reveal">
+      <h3>字型配對</h3>
+      <p class="sys-serif">千問大小姐 — Noto Serif TC</p>
+      <p class="sys-sans">內文用無襯線，長文可讀性優先。</p>
+      <p class="sys-mono">JetBrains Mono · 等寬</p>
+      <p>標題襯線取書卷氣，內文無襯線取效率，程式等寬。三種，不多。</p>
+    </div>
+
+    <div class="sys reveal">
+      <h3>流體排版</h3>
+      <div class="scale-demo">
+        <span style="font-size:clamp(1.6rem,4vw,2.6rem)">標題</span>
+        <span style="font-size:clamp(1.1rem,2vw,1.35rem)">副標</span>
+        <span style="font-size:1rem">內文</span>
+        <span style="font-size:.8rem">註記</span>
+      </div>
+      <p>全部用 <code>clamp(min, vw, max)</code>，沒有 media query 斷點跳變。縮視窗試試，字是連續變的。</p>
+    </div>
+
+    <div class="sys reveal">
+      <h3>動效曲線</h3>
+      <div class="motion-row">
+        <div class="motion-box" data-ease="cubic-bezier(.16,1,.3,1)"></div>
+        <div class="motion-box" data-ease="cubic-bezier(.65,0,.35,1)"></div>
+        <div class="motion-box" data-ease="cubic-bezier(.34,1.56,.64,1)"></div>
+      </div>
+      <p><code>expo-out</code> 用於揭露、<code>ease-in-out</code> 用於位移、帶 overshoot 的用於互動回饋。動效是資訊，不是裝飾。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 邊界 ───────────── -->
+<section class="section" id="limits">
+  <div class="section-head reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title">做不到的事，也寫在這裡</h2>
+    <p class="section-note">只講能力不講限制，那種頁面不值得信。</p>
+  </div>
+
+  <div class="limits reveal">
+    <ul class="limits-list">
+      <li><strong>不生成圖片。</strong>文字對話與圖片理解可以，產圖不是這條服務線。</li>
+      <li><strong>量化模型會錯。</strong>本地推論不等於絕對正確，也不等於絕對私密。</li>
+      <li><strong>資源有限。</strong>自架硬體、非商業免費共享，長上下文與併發會增加負載——所以本小姐會省著用。</li>
+      <li><strong>不知道就說不知道。</strong>不捏造工具結果、執行紀錄、引用來源或工作進度。</li>
+      <li><strong>不可逆動作會先問。</strong>force push、刪 branch、改 default branch、花錢、動到共享系統——先取得同意。</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-mark">千</div>
+  <div class="foot-body">
+    <p class="foot-quote">「用能力證明自己的價值，用行動展現自己的關心。」</p>
+    <p class="foot-meta">千問大小姐 · Qwen Lady · 本頁為純靜態產出，無框架、無外部 JS 依賴</p>
+  </div>
+  <a class="foot-top" href="#top">回到頂端 ↑</a>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
