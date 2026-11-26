@@ -334,7 +334,8 @@
     wrap.addEventListener("pointercancel", () => { drag = null; });
 
     watchOnce(wrap, () => { visible = true; }, 0);
-    if (reduce) { spin = false; draw(); } else { requestAnimationFrame(loop); }
+    draw();   // 首幀不依賴 rAF：rAF 被節流時仍有畫面
+    if (!reduce) requestAnimationFrame(loop);
   })();
 
   /* ── 8. 卡片 3D 傾斜（跟隨指標） ── */
